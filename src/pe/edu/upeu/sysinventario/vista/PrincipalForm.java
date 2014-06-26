@@ -36,11 +36,11 @@ public class PrincipalForm extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
-        jMenu8 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -50,11 +50,11 @@ public class PrincipalForm extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 737, Short.MAX_VALUE)
+            .addGap(0, 561, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 482, Short.MAX_VALUE)
+            .addGap(0, 447, Short.MAX_VALUE)
         );
 
         jMenu1.setText("File");
@@ -68,20 +68,20 @@ public class PrincipalForm extends javax.swing.JFrame {
 
         jMenu3.setText("Inventario L8");
 
-        jMenu4.setText("jMenu4");
+        jMenu8.setText("Sala");
+        jMenu3.add(jMenu8);
+
+        jMenu4.setText("CPU");
         jMenu3.add(jMenu4);
 
-        jMenu5.setText("jMenu5");
+        jMenu5.setText("Mobiliario");
         jMenu3.add(jMenu5);
 
-        jMenu6.setText("jMenu6");
+        jMenu6.setText("Periférico");
         jMenu3.add(jMenu6);
 
-        jMenu7.setText("jMenu7");
+        jMenu7.setText("Téc_Operaciones");
         jMenu3.add(jMenu7);
-
-        jMenu8.setText("jMenu8");
-        jMenu3.add(jMenu8);
 
         jMenu2.add(jMenu3);
 
@@ -93,11 +93,17 @@ public class PrincipalForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jDesktopPane1)
+                .addGap(166, 166, 166))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jDesktopPane1)
+                .addGap(24, 24, 24))
         );
 
         pack();
