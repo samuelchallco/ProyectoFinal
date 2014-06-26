@@ -50,7 +50,7 @@ public class PrincipalForm extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 561, Short.MAX_VALUE)
+            .addGap(0, 727, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,15 +71,19 @@ public class PrincipalForm extends javax.swing.JFrame {
         jMenu8.setText("Sala");
         jMenu3.add(jMenu8);
 
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/memory.png"))); // NOI18N
         jMenu4.setText("CPU");
         jMenu3.add(jMenu4);
 
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/chair_32.png"))); // NOI18N
         jMenu5.setText("Mobiliario");
         jMenu3.add(jMenu5);
 
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Monitor.png"))); // NOI18N
         jMenu6.setText("Periférico");
         jMenu3.add(jMenu6);
 
+        jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/projector_24.png"))); // NOI18N
         jMenu7.setText("Téc_Operaciones");
         jMenu3.add(jMenu7);
 
@@ -95,8 +99,7 @@ public class PrincipalForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jDesktopPane1)
-                .addGap(166, 166, 166))
+                .addComponent(jDesktopPane1))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

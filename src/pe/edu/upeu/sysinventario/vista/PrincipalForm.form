@@ -38,21 +38,33 @@
                 </Menu>
                 <Menu class="javax.swing.JMenu" name="jMenu4">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/memory.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="CPU"/>
                   </Properties>
                 </Menu>
                 <Menu class="javax.swing.JMenu" name="jMenu5">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/chair_32.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Mobiliario"/>
                   </Properties>
                 </Menu>
                 <Menu class="javax.swing.JMenu" name="jMenu6">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Monitor.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Perif&#xe9;rico"/>
                   </Properties>
                 </Menu>
                 <Menu class="javax.swing.JMenu" name="jMenu7">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/projector_24.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="T&#xe9;c_Operaciones"/>
                   </Properties>
                 </Menu>
@@ -86,10 +98,9 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jDesktopPane1" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -109,7 +120,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="561" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="727" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
