@@ -36,11 +36,10 @@ public class PrincipalForm extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
-        jMenu8 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -64,28 +63,25 @@ public class PrincipalForm extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Sala");
 
         jMenu3.setText("Inventario L8");
 
-        jMenu8.setText("Sala");
-        jMenu3.add(jMenu8);
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/memory.png"))); // NOI18N
+        jMenuItem3.setText("CPU");
+        jMenu3.add(jMenuItem3);
 
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/memory.png"))); // NOI18N
-        jMenu4.setText("CPU");
-        jMenu3.add(jMenu4);
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/chair_32.png"))); // NOI18N
+        jMenuItem4.setText("Mobiliario");
+        jMenu3.add(jMenuItem4);
 
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/chair_32.png"))); // NOI18N
-        jMenu5.setText("Mobiliario");
-        jMenu3.add(jMenu5);
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Monitor.png"))); // NOI18N
+        jMenuItem5.setText("Periferico");
+        jMenu3.add(jMenuItem5);
 
-        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Monitor.png"))); // NOI18N
-        jMenu6.setText("Periférico");
-        jMenu3.add(jMenu6);
-
-        jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/projector_24.png"))); // NOI18N
-        jMenu7.setText("Téc_Operaciones");
-        jMenu3.add(jMenu7);
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/projector_24.png"))); // NOI18N
+        jMenuItem6.setText("Tec_Operaciones");
+        jMenu3.add(jMenuItem6);
 
         jMenu2.add(jMenu3);
 
@@ -152,13 +148,12 @@ public class PrincipalForm extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     // End of variables declaration//GEN-END:variables
 }

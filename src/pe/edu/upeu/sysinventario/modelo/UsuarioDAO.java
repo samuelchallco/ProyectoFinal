@@ -15,7 +15,7 @@ import pe.edu.upeu.sysinventario.config.Conexion;
 
 /**
  *
- * @author Samuel
+ * @author jose
  */
 public class UsuarioDAO {
     int res;

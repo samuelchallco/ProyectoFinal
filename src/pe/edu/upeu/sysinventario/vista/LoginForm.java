@@ -11,7 +11,7 @@ import pe.edu.upeu.sysinventario.modelo.UsuarioDAO;
 
 /**
  *
- * @author SAMUEL CHALLCO
+ * @author jose
  */
 public class LoginForm extends javax.swing.JFrame {
     int op; UsuarioDAO ud = new UsuarioDAO();

@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author Samuel
+ * @author jose
  */
 public class Usuario {
     private int idUsuario;

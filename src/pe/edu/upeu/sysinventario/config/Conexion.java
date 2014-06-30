@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author Samuel
+ * @author jose
  */
 public class Conexion {
     public static Connection GetConexion() throws ClassNotFoundException, SQLException{
