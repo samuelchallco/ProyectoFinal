@@ -110,13 +110,19 @@ public class LoginForm extends javax.swing.JFrame {
                 PrincipalForm pf = new PrincipalForm();
                 pf.setVisible(true);
                 this.dispose();
+                requestFocus();
             }else{
                 JOptionPane.showMessageDialog(null,"Usuario no existe!");
                 txtusuario.requestFocus();
+                limpiar();
             }
         }
 
     }//GEN-LAST:event_btnIngresarActionPerformed
+void limpiar(){
+    txtusuario.setText(null);
+    txtpass.setText(null);
+}
 
     /**
      * @param args the command line arguments

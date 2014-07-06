@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import pe.edu.upeu.sysinventario.config.Conexion;
 
@@ -24,7 +25,7 @@ public class UsuarioDAO {
     ResultSet rs;
     String sql;
     public int validarUsuario(String usua, String clave){
-        sql="SELECT *FROM Usuario WHERE usuario='"+usua+"' AND clave='"+clave+"'";
+        sql="SELECT *FROM USUARIO WHERE LOGIN='"+usua+"' AND CONTRASEÑA='"+clave+"'";
         try {
             cx = Conexion.GetConexion();
             st = cx.createStatement();
@@ -41,7 +42,7 @@ public class UsuarioDAO {
     return res;
     }
     public int verificarUsuario(String user){
-    sql="SELECT *FROM Usuario WHERE usuario='"+user+"'";
+    sql="SELECT *FROM USUARIO WHERE LOGIN='"+user+"'";
         try {
             cx = Conexion.GetConexion();
             st = cx.createStatement();
@@ -58,7 +59,7 @@ public class UsuarioDAO {
         return res;    
     }
     public int registrarUsuario(String user, String clave){
-        sql="INSERT INTO Usuario VALUES(null,'"+user+"','"+clave+"')";
+        sql="INSERT INTO USUARIO VALUES(null,'"+user+"','"+clave+"')";
         try {
             cx = Conexion.GetConexion();
             st = cx.createStatement();
@@ -67,5 +68,72 @@ public class UsuarioDAO {
             JOptionPane.showMessageDialog(null, "Error: "+ex);
         }         
     return res;
+    }
+    public ArrayList<Usuario> listarUsuario(){
+        ArrayList<Usuario> lista = new ArrayList();
+        sql = "select *from USUARIO";
+        try {
+            cx = Conexion.GetConexion();
+            st = cx.createStatement();
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+            lista.add(Usuario.loadUsuario(rs));
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error: "+ex);
+        }
+        return lista;
+    }
+    public int modificarUsuario(int idu, String usuario, String clave){
+    sql="UPDATE USUARIO set LOGIN='"+usuario+"', CONTRASEÑA='"+clave+"' WHERE IDUSUARIO='"+idu+"'";
+        try {
+            cx = Conexion.GetConexion();
+            st = cx.createStatement();
+            res = st.executeUpdate(sql);
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error: "+ex);
+        }  
+    return res;
+    }
+    public int eliminarUsuario(int idu){
+        sql="DELETE FROM USUARIO WHERE IDUSUARIO='"+idu+"'";
+        try {
+            cx = Conexion.GetConexion();
+            st = cx.createStatement();
+            res = st.executeUpdate(sql);
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error: "+ex);
+        } 
+    return res;
+    }
+    public ArrayList<Usuario> listarUsuario(int id){
+        ArrayList<Usuario> lista = new ArrayList();
+        sql = "select *from USUARIO WHERE IDUSUARIO="+id;
+        try {
+            cx = Conexion.GetConexion();
+            st = cx.createStatement();
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+            lista.add(Usuario.loadUsuario(rs));
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error: "+ex);
+        }
+        return lista;
+    } 
+    public ArrayList<Usuario> listarUsuario(String us){
+    ArrayList<Usuario> lista = new ArrayList();
+        sql = "select *from USUARIO WHERE LOGIN LIKE '"+us+"'%";
+        try {
+            cx = Conexion.GetConexion();
+            st = cx.createStatement();
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+            lista.add(Usuario.loadUsuario(rs));
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error: "+ex);
+        }   
+    return lista;
     }
 }
