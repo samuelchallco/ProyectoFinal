@@ -25,7 +25,7 @@ public class UsuarioDAO {
     ResultSet rs;
     String sql;
     public int validarUsuario(String usua, String clave){
-        sql="SELECT *FROM USUARIO WHERE LOGIN='"+usua+"' AND CONTRASEÑA='"+clave+"'";
+        sql="SELECT *FROM USUARIO WHERE LOGIN='"+usua+"' AND clave='"+clave+"'";
         try {
             cx = Conexion.GetConexion();
             st = cx.createStatement();
@@ -85,7 +85,7 @@ public class UsuarioDAO {
         return lista;
     }
     public int modificarUsuario(int idu, String usuario, String clave){
-    sql="UPDATE USUARIO set LOGIN='"+usuario+"', CONTRASEÑA='"+clave+"' WHERE IDUSUARIO='"+idu+"'";
+    sql="UPDATE USUARIO set LOGIN='"+usuario+"', clave='"+clave+"' WHERE IDUSUARIO='"+idu+"'";
         try {
             cx = Conexion.GetConexion();
             st = cx.createStatement();

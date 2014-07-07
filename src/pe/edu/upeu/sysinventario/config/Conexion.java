@@ -17,10 +17,10 @@ import java.sql.SQLException;
 public class Conexion {
     public static Connection GetConexion() throws ClassNotFoundException, SQLException{
     Connection conex=null;
-        Class.forName("oracle.jdbc.OracleDriver");
-        String url="jdbc:oracle:thin:@localhost:1521:XE";
-        String usuario="inventario";
-        String pass ="123";
+        Class.forName("com.mysql.jdbc.Driver");
+        String url="jdbc:mysql://localhost/bd_inventario";
+        String usuario="root";
+        String pass ="root";
         conex =(Connection) DriverManager.getConnection(url,usuario,pass);
     
     return conex;
