@@ -52,7 +52,7 @@ public class Usuario {
     public static Usuario loadUsuario(ResultSet rs) throws SQLException{
 		Usuario usuario = new Usuario();
                 usuario.setIdUsuario(rs.getInt("idUsuario"));
-		usuario.setUsuario(rs.getString("usuario"));
+		usuario.setUsuario(rs.getString("login"));
 		usuario.setClave(rs.getString("clave"));
 		return usuario;
 	}
