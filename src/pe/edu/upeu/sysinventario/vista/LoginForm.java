@@ -6,8 +6,9 @@
 
 package pe.edu.upeu.sysinventario.vista;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
-import pe.edu.upeu.sysinventario.modelo.UsuarioDAO;
+import pe.edu.upeu.sysinventario.DAO.UsuarioDAO;
 
 /**
  *
@@ -44,6 +45,12 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel1.setText("Usuario:");
 
         jLabel2.setText("Clave:");
+
+        txtpass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtpassKeyPressed(evt);
+            }
+        });
 
         btnIngresar.setText("Ingresar");
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +118,7 @@ public class LoginForm extends javax.swing.JFrame {
                 pf.setVisible(true);
                 this.dispose();
                 requestFocus();
+                
             }else{
                 JOptionPane.showMessageDialog(null,"Usuario no existe!");
                 txtusuario.requestFocus();
@@ -119,6 +127,32 @@ public class LoginForm extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnIngresarActionPerformed
+
+    private void txtpassKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassKeyPressed
+        // TODO add your handling code here:
+        int key = evt.getKeyCode();
+        if (key == KeyEvent.VK_ENTER) {
+            //JOptionPane.showMessageDialog(null,"caja usuario");
+            String u = txtusuario.getText();
+            String p = new String(txtpass.getPassword());
+            if(u.equals("")|p.equals("")){
+                JOptionPane.showMessageDialog(null,"Cajas vacias");
+            }else{
+                op = ud.validarUsuario(u, p);
+                if(op==1){
+                    PrincipalForm pf = new PrincipalForm();
+                    pf.setVisible(true);
+                    this.dispose();
+                    requestFocus();
+                
+                }else{
+                    JOptionPane.showMessageDialog(null,"Usuario no existe!");
+                    txtusuario.requestFocus();
+                    limpiar();
+                }
+            }
+        }
+    }//GEN-LAST:event_txtpassKeyPressed
 void limpiar(){
     txtusuario.setText(null);
     txtpass.setText(null);

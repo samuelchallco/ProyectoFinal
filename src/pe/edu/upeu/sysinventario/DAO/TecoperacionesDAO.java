@@ -4,14 +4,12 @@
  * and open the template in the editor.
  */
 
-package pe.edu.upeu.sysinventario.modelo;
-
-
+package pe.edu.upeu.sysinventario.DAO;
 
 /**
  *
  * @author SAMUEL CHALLCO
  */
-public class MobiliarioDAO {
+public class TecoperacionesDAO {
     
 }

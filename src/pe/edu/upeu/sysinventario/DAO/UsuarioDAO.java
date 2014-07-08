@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package pe.edu.upeu.sysinventario.modelo;
+package pe.edu.upeu.sysinventario.DAO;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import pe.edu.upeu.sysinventario.config.Conexion;
+import pe.edu.upeu.sysinventario.modelo.Usuario;
 
 /**
  *
@@ -85,7 +86,7 @@ public class UsuarioDAO {
         return lista;
     }
     public int modificarUsuario(int idu, String usuario, String clave){
-    sql="UPDATE USUARIO set LOGIN='"+usuario+"', clave='"+clave+"' WHERE IDUSUARIO='"+idu+"'";
+    sql="UPDATE USUARIO set LOGIN='"+usuario+"', CLAVE='"+clave+"' WHERE IDUSUARIO='"+idu+"'";
         try {
             cx = Conexion.GetConexion();
             st = cx.createStatement();

@@ -13,7 +13,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import pe.edu.upeu.sysinventario.modelo.Usuario;
-import pe.edu.upeu.sysinventario.modelo.UsuarioDAO;
+import pe.edu.upeu.sysinventario.DAO.UsuarioDAO;
     
 
 /**
@@ -72,6 +72,8 @@ public final class UsuarioForm extends javax.swing.JInternalFrame {
         jLabel2.setText("Usuario:");
 
         jLabel3.setText("Clave:");
+
+        txtidus.setEditable(false);
 
         txtusuario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {

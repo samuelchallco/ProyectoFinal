@@ -11,13 +11,15 @@ import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 import pe.edu.upeu.sysinventario.control.ImagenFondo;
+import pe.edu.upeu.sysinventario.DAO.UsuarioDAO;
 
 /**
  *
  * @author Samuel
  */
 public class PrincipalForm extends javax.swing.JFrame {
-    CpuForm cf;MobiliarioForm mf;UsuarioForm uf;
+    CpuForm cf;MobiliarioForm mf;UsuarioForm uf;PerifericoForm pf;
+    UsuarioDAO ud = new UsuarioDAO();
     /**
      * Creates new form PrincipalForm
      */
@@ -114,6 +116,11 @@ public class PrincipalForm extends javax.swing.JFrame {
 
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Monitor.png"))); // NOI18N
         jMenuItem5.setText("Periferico");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem5);
 
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/projector_24.png"))); // NOI18N
@@ -165,6 +172,12 @@ public class PrincipalForm extends javax.swing.JFrame {
         uf=new UsuarioForm();
         CentrarVentana(uf);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        pf=new PerifericoForm();
+        CentrarVentana(pf);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
