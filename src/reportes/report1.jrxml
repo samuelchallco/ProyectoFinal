@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="3000" pageHeight="842" columnWidth="2960" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="32e23aa9-a5cf-4034-a0dd-35fe06c2fd01">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     cpu.`UB_CodCAF` AS cpu_UB_CodCAF,
+     cpu.`UB_Estacion` AS cpu_UB_Estacion,
+     cpu.`PP_Marca` AS cpu_PP_Marca,
+     cpu.`PP_Placa` AS cpu_PP_Placa,
+     cpu.`PP_Serie` AS cpu_PP_Serie,
+     cpu.`P_Marca` AS cpu_P_Marca,
+     cpu.`P_Modelo` AS cpu_P_Modelo,
+     cpu.`P_Serie` AS cpu_P_Serie,
+     cpu.`P_Velocidad` AS cpu_P_Velocidad,
+     cpu.`DD_Marca1` AS cpu_DD_Marca1,
+     cpu.`DD_Marca2` AS cpu_DD_Marca2,
+     cpu.`DD_Tipo` AS cpu_DD_Tipo,
+     cpu.`DD_Serie1` AS cpu_DD_Serie1,
+     cpu.`DD_Serie2` AS cpu_DD_Serie2,
+     cpu.`DD_Capacidad1` AS cpu_DD_Capacidad1,
+     cpu.`DD_Capacidad2` AS cpu_DD_Capacidad2,
+     cpu.`RAM_Marca` AS cpu_RAM_Marca,
+     cpu.`RAM_Modelo` AS cpu_RAM_Modelo,
+     cpu.`RAM_Capacidad` AS cpu_RAM_Capacidad,
+     cpu.`UO_Marca` AS cpu_UO_Marca,
+     cpu.`UO_Tipo` AS cpu_UO_Tipo,
+     cpu.`UO_Serie` AS cpu_UO_Serie,
+     cpu.`TV_Marca` AS cpu_TV_Marca,
+     cpu.`TV_Tipo` AS cpu_TV_Tipo,
+     cpu.`TV_Memoria` AS cpu_TV_Memoria,
+     cpu.`TV_Serie1` AS cpu_TV_Serie1,
+     cpu.`TV_Serie2` AS cpu_TV_Serie2,
+     cpu.`TS_Integrado` AS cpu_TS_Integrado,
+     cpu.`TR_Marca` AS cpu_TR_Marca,
+     cpu.`TR_Modelo` AS cpu_TR_Modelo,
+     cpu.`TR_Serie` AS cpu_TR_Serie
+FROM
+     `cpu` cpu]]>
+	</queryString>
+	<field name="cpu_UB_CodCAF" class="java.lang.String"/>
+	<field name="cpu_UB_Estacion" class="java.lang.String"/>
+	<field name="cpu_PP_Marca" class="java.lang.String"/>
+	<field name="cpu_PP_Placa" class="java.lang.String"/>
+	<field name="cpu_PP_Serie" class="java.lang.String"/>
+	<field name="cpu_P_Marca" class="java.lang.String"/>
+	<field name="cpu_P_Modelo" class="java.lang.String"/>
+	<field name="cpu_P_Serie" class="java.lang.String"/>
+	<field name="cpu_P_Velocidad" class="java.lang.String"/>
+	<field name="cpu_DD_Marca1" class="java.lang.String"/>
+	<field name="cpu_DD_Marca2" class="java.lang.String"/>
+	<field name="cpu_DD_Tipo" class="java.lang.String"/>
+	<field name="cpu_DD_Serie1" class="java.lang.String"/>
+	<field name="cpu_DD_Serie2" class="java.lang.String"/>
+	<field name="cpu_DD_Capacidad1" class="java.lang.String"/>
+	<field name="cpu_DD_Capacidad2" class="java.lang.String"/>
+	<field name="cpu_RAM_Marca" class="java.lang.String"/>
+	<field name="cpu_RAM_Modelo" class="java.lang.String"/>
+	<field name="cpu_RAM_Capacidad" class="java.lang.String"/>
+	<field name="cpu_UO_Marca" class="java.lang.String"/>
+	<field name="cpu_UO_Tipo" class="java.lang.String"/>
+	<field name="cpu_UO_Serie" class="java.lang.String"/>
+	<field name="cpu_TV_Marca" class="java.lang.String"/>
+	<field name="cpu_TV_Tipo" class="java.lang.String"/>
+	<field name="cpu_TV_Memoria" class="java.lang.String"/>
+	<field name="cpu_TV_Serie1" class="java.lang.String"/>
+	<field name="cpu_TV_Serie2" class="java.lang.String"/>
+	<field name="cpu_TS_Integrado" class="java.lang.String"/>
+	<field name="cpu_TR_Marca" class="java.lang.String"/>
+	<field name="cpu_TR_Modelo" class="java.lang.String"/>
+	<field name="cpu_TR_Serie" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement uuid="77a66881-3364-472a-9910-e2c79a1b09a0" mode="Opaque" x="-20" y="-20" width="3000" height="92" backcolor="#006699"/>
+				<staticText>
+					<reportElement uuid="ad54ee2b-ea93-4d54-9420-435def1e9c67" x="20" y="20" width="234" height="43" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CPU]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="7adf0685-61ed-4719-9c03-a4aa2e131747" x="395" y="43" width="180" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28">
+			<line>
+				<reportElement uuid="6c9cc869-569d-4807-99bf-dcf59ef52301" x="-20" y="20" width="2980" height="1" forecolor="#666666"/>
+			</line>
+			<staticText>
+				<reportElement uuid="714bd667-4dd7-43d5-97a3-ce196002081c" mode="Opaque" x="0" y="0" width="47" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CodCAF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="474ec37b-bca7-4b64-a5fe-23628dd6a3bc" mode="Opaque" x="47" y="0" width="59" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="10d64b29-7b0c-4965-ab1b-ad802fee8e75" mode="Opaque" x="105" y="0" width="79" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PP_Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cc4fa383-d5f3-4def-ac78-cb095112969b" mode="Opaque" x="184" y="0" width="159" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PP_Placa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f6ca0942-55a5-4ab3-8c3c-7c07e8808ac6" mode="Opaque" x="343" y="0" width="192" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PP_Serie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="196d301d-5147-48db-a560-2bf39f366a0e" mode="Opaque" x="535" y="0" width="65" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[P_Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ffacfb32-f279-4e72-87ee-47777b0c6013" mode="Opaque" x="600" y="0" width="100" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[P_Modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3fb5b4a9-e82c-4988-bb0c-01774b5183c5" mode="Opaque" x="700" y="0" width="189" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[P_Serie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="79bd7270-32e0-4b4b-af1d-d9450dd3e320" mode="Opaque" x="889" y="0" width="90" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[P_Velocidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d1005456-62d5-4684-83e7-ac96e76363b4" mode="Opaque" x="979" y="0" width="83" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DD_Marca1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f5380368-c7ec-4b47-9291-0490c1094a15" mode="Opaque" x="1062" y="0" width="84" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DD_Marca2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="59b3092b-36c8-4c79-a266-aa5707000162" mode="Opaque" x="1146" y="0" width="68" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DD_Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3e6d39cc-b391-49d0-8b74-b6774aca9e64" mode="Opaque" x="1214" y="0" width="87" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DD_Serie1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a2be2db4-e414-4be0-be5f-36057c8aa988" mode="Opaque" x="1300" y="0" width="100" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DD_Serie2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ad5e5df0-894e-468f-b0b0-0af297b32ff8" mode="Opaque" x="1400" y="0" width="70" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DD_Cap1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="02e50826-6ad1-43ff-a677-8a3d25960a01" mode="Opaque" x="1470" y="0" width="74" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DD_Cap2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a8ae79e-f005-4973-9961-0905505538b0" mode="Opaque" x="1544" y="0" width="82" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RAM_Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e47fba08-2ee8-4a0c-856b-0b53f916d470" mode="Opaque" x="1625" y="0" width="91" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RAM_Modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="843b722c-26c5-43a0-8d37-bbc26d8b1e92" mode="Opaque" x="1715" y="0" width="102" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RAM_Capacidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f0b02677-5a9e-4707-bb43-efd77d47e06e" mode="Opaque" x="1817" y="0" width="109" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UO_Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ff90ddc1-6eb0-46c0-831d-57eab8bf5e2a" mode="Opaque" x="1926" y="0" width="96" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UO_Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b33949e0-1430-4e6e-9ceb-2c137f678bfc" mode="Opaque" x="2022" y="0" width="104" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UO_Serie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3f4714e2-b624-4122-8963-4272c838ae84" mode="Opaque" x="2125" y="0" width="81" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TV_Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dfbe428e-741f-43c6-82d5-74d652023c8f" mode="Opaque" x="2206" y="0" width="76" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TV_Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="edddf9db-cbc9-4feb-944e-56f80a5d70db" mode="Opaque" x="2282" y="0" width="98" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TV_Memoria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="370cfa89-d12b-4465-9f7a-f9483641fb2f" mode="Opaque" x="2380" y="0" width="91" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TV_Serie1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="16651c98-58d5-4e8a-b247-bc6f29045fb8" mode="Opaque" x="2471" y="0" width="100" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TV_Serie2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bf3e5e0a-41fe-43e2-b819-1067e2946fa1" mode="Opaque" x="2571" y="0" width="94" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TS_Integrado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="05733199-4d14-4dc8-8651-303cae092b7e" mode="Opaque" x="2665" y="0" width="93" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TR_Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3d3f0218-d58b-458f-9005-3abf377d90e6" mode="Opaque" x="2850" y="0" width="84" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TR_Modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="36f26217-3eeb-424f-9d72-62a196fe851a" mode="Opaque" x="2758" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TR_Serie]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="35">
+			<line>
+				<reportElement uuid="993854d4-7239-4963-be78-a6cab95beea6" positionType="FixRelativeToBottom" x="0" y="19" width="2960" height="1"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="a3ed1eec-e272-437d-b2d0-e970b341016f" x="0" y="0" width="47" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_UB_CodCAF}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="afc6944d-eee7-491f-a424-9d5c53a5ee12" x="47" y="0" width="59" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_UB_Estacion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="45e8af7b-039e-4707-806c-d1a785d3696a" x="105" y="0" width="79" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_PP_Marca}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="48dd461a-f33d-420d-8031-7d49752aec96" x="184" y="0" width="159" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_PP_Placa}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="6e8f8a23-685d-4def-aaa7-76716dac2f6a" x="343" y="0" width="192" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_PP_Serie}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="06de2885-2c50-48ee-8053-c90ed8360f62" x="535" y="0" width="65" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_P_Marca}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="de329028-cf6e-4d1f-a581-fb59be891b2e" x="600" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_P_Modelo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="074b167a-967b-493f-ae8b-a5b22cb195e1" x="700" y="0" width="189" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_P_Serie}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="73fbf9cf-8eec-4e05-82de-565ce88347ee" x="889" y="0" width="90" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_P_Velocidad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="4811134e-85ef-4d64-a971-e6fc8d48defb" x="979" y="0" width="83" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_DD_Marca1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="e4e6ca90-2f75-4fc5-86f5-60f3a29ffca1" x="1062" y="0" width="84" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_DD_Marca2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="43b8d9b6-4780-40c7-bb13-1c1ec28c2a29" x="1146" y="0" width="68" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_DD_Tipo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="25ca22c9-f2e6-4769-a834-cdc1ca4e3057" x="1214" y="0" width="87" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_DD_Serie1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="17f13d0f-6549-491e-8ab2-3dd2e0c77c82" x="1300" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_DD_Serie2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="359c8de2-9f5d-405a-b931-68c619cc08a0" x="1400" y="0" width="70" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_DD_Capacidad1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="20092924-c460-494e-bd21-129ba3880dda" x="1470" y="0" width="74" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_DD_Capacidad2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="b9dd43e4-00aa-4484-9fe2-fbb45fc35a44" x="1544" y="0" width="82" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_RAM_Marca}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="e2a53ff0-7816-4727-a4d4-92289a2a0762" x="1625" y="0" width="91" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_RAM_Modelo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="ca138abe-8140-4dde-adf0-51d3f223e0bc" x="1715" y="0" width="102" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_RAM_Capacidad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="593707f5-74ec-4980-9091-bfcd4613f8c9" x="1817" y="0" width="109" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_UO_Marca}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="b034a8df-bbc6-4d2f-9329-8609a998f9ac" x="1926" y="-1" width="96" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_UO_Tipo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="a8a6b676-7c0b-4d5a-975b-ccb976cb1a9c" x="2022" y="0" width="104" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_UO_Serie}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="47e6509e-d6be-4ef6-84f1-ebacc2727116" x="2125" y="0" width="81" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_TV_Marca}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="d3b794cd-4e81-4972-bb62-310f7c9e21c9" x="2206" y="0" width="76" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_TV_Tipo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="6ca30071-3b60-4905-8476-451b97e401d0" x="2282" y="0" width="98" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_TV_Memoria}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="33299839-335c-43a6-9486-3eb1ff2b2260" x="2380" y="0" width="91" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_TV_Serie1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="cd7d6c96-4e7a-4e38-945d-1d3c3e8d2ac0" x="2471" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_TV_Serie2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="fa1511d1-e6f0-46d7-9ad3-e254e58f1d84" x="2571" y="0" width="94" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_TS_Integrado}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="d026ba47-c081-4ad4-96e1-dab57e486d12" x="2665" y="0" width="93" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_TR_Marca}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="41a8d136-f184-4319-be50-738fe3be8c38" x="2758" y="0" width="92" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_TR_Serie}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="81dad6b3-8ead-493e-a4fe-17bc9c4d87d9" x="2850" y="0" width="84" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpu_TR_Modelo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="16d16dad-b898-4185-839d-421d703b6494" mode="Opaque" x="0" y="4" width="2906" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="c4383930-6436-4d64-bdd3-979616bc1651" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="a548b9fb-2af6-4223-b957-4e6f2df35875" mode="Opaque" x="2906" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" language="groovy" pageWidth="900" pageHeight="842" columnWidth="860" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bce35f37-1fc1-4023-9764-0b924a93bd56">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tec_operaciones.`Cod_CAF` AS tec_operaciones_Cod_CAF,
+     tec_operaciones.`Componente` AS tec_operaciones_Componente,
+     tec_operaciones.`Marca` AS tec_operaciones_Marca,
+     tec_operaciones.`Serie` AS tec_operaciones_Serie,
+     tec_operaciones.`Modelo` AS tec_operaciones_Modelo,
+     tec_operaciones.`Otras` AS tec_operaciones_Otras,
+     tec_operaciones.`UB_TecOp` AS tec_operaciones_UB_TecOp
+FROM
+     `tec_operaciones` tec_operaciones]]>
+	</queryString>
+	<field name="tec_operaciones_Cod_CAF" class="java.lang.String"/>
+	<field name="tec_operaciones_Componente" class="java.lang.String"/>
+	<field name="tec_operaciones_Marca" class="java.lang.String"/>
+	<field name="tec_operaciones_Serie" class="java.lang.String"/>
+	<field name="tec_operaciones_Modelo" class="java.lang.String"/>
+	<field name="tec_operaciones_Otras" class="java.lang.String"/>
+	<field name="tec_operaciones_UB_TecOp" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement uuid="b8055ab1-bf9a-4e1b-a4c8-b70452565d45" mode="Opaque" x="-20" y="-20" width="900" height="92" backcolor="#006699"/>
+				<staticText>
+					<reportElement uuid="52ae8c01-bd9f-47d7-ba70-618c4ca0cf06" x="20" y="20" width="316" height="43" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tecnología de Operaciones]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="267186a2-d335-4ae0-b462-ded4c7c2ff3a" x="395" y="43" width="180" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Add a description here]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="27">
+			<line>
+				<reportElement uuid="beaae010-007b-4d5f-bed4-593d6de1f553" x="-20" y="20" width="900" height="1" forecolor="#666666"/>
+			</line>
+			<staticText>
+				<reportElement uuid="e70ba943-6342-4060-a7e3-c4f6678377b4" mode="Opaque" x="0" y="0" width="65" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cod_CAF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5038bd48-3df8-48fb-b96a-c8efb6f9ace8" mode="Opaque" x="65" y="0" width="118" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Componente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7a756b1f-5917-4646-96cc-14a0682c40c1" mode="Opaque" x="183" y="0" width="79" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b8dcac20-18cb-44ba-99a9-2f9007faa4f1" mode="Opaque" x="262" y="0" width="193" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Serie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dfd7dc23-ebb6-4954-81be-6f2857a1b1f9" mode="Opaque" x="455" y="0" width="120" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="345dc16c-c1c4-4f6b-8699-ed25316d5c1b" mode="Opaque" x="575" y="0" width="200" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Otras]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7f83c369-b30c-4cc0-a2ce-c91924909162" mode="Opaque" x="775" y="0" width="75" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UB_TecOp]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27">
+			<line>
+				<reportElement uuid="b1199981-0f49-44eb-bfad-407dda2f548e" positionType="FixRelativeToBottom" x="0" y="19" width="880" height="1"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="846a81d2-e800-4bd2-a5a7-8b17e865156d" x="0" y="0" width="65" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tec_operaciones_Cod_CAF}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="44af3e94-b3b2-4b6e-90e0-122e7acc0f47" x="65" y="0" width="118" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tec_operaciones_Componente}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="d316684a-39a6-4a26-83b5-7a3402917538" x="183" y="0" width="79" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tec_operaciones_Marca}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="c1cc9909-fe1a-43a2-9380-b672d3b7fca8" x="262" y="0" width="193" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tec_operaciones_Serie}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="73aef219-2979-4f0a-b9f4-88be92703f84" x="455" y="0" width="120" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tec_operaciones_Modelo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="3b12fe76-b9ac-402c-9cc3-c5ec7c437a02" x="575" y="0" width="200" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tec_operaciones_Otras}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="a3d8fe18-07a9-4d14-b28e-85829699d072" x="775" y="0" width="75" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tec_operaciones_UB_TecOp}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="58be5264-17a3-4090-81b6-5a2d1f928958" mode="Opaque" x="0" y="4" width="810" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="85f61e8d-1b3f-4482-8ad0-a90616363fd4" mode="Opaque" x="810" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="6c70e4a0-82e5-4a26-85ef-bbded90c03fd" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
