@@ -78,7 +78,7 @@ public class Mobiliario {
         return otras;
     }
 
-    public void setOtras(String otros) {
+    public void setOtras(String otras) {
         this.otras = otras;
     }
 

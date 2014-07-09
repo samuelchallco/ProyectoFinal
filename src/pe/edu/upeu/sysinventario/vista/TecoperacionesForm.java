@@ -6,17 +6,33 @@
 
 package pe.edu.upeu.sysinventario.vista;
 
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import pe.edu.upeu.sysinventario.DAO.TecoperacionesDAO;
+import pe.edu.upeu.sysinventario.modelo.Tecoperaciones;
+
+
 /**
  *
  * @author SAMUEL CHALLCO
  */
 public class TecoperacionesForm extends javax.swing.JInternalFrame {
-
+    TecoperacionesDAO ad = new TecoperacionesDAO();
+    int op;
+    ArrayList<Tecoperaciones> lista = new ArrayList();
+    DefaultListModel modelolista =  new DefaultListModel();
+    DefaultTableModel model;
+    
     /**
      * Creates new form TecoperacionesForm
      */
     public TecoperacionesForm() {
         initComponents();
+        setLocation(700, 200);
+        listarTecoperaciones();
+        
     }
 
     /**
@@ -28,21 +44,419 @@ public class TecoperacionesForm extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txtidtop = new javax.swing.JTextField();
+        txtcodcaf = new javax.swing.JTextField();
+        txtcomponente = new javax.swing.JTextField();
+        txtmarca = new javax.swing.JTextField();
+        txtserie = new javax.swing.JTextField();
+        txtmodelo = new javax.swing.JTextField();
+        txtotras = new javax.swing.JTextField();
+        txtubtecop = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblslistaoperaciones = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
+        btnagregar = new javax.swing.JButton();
+        btnmodificar = new javax.swing.JButton();
+        btneliminar = new javax.swing.JButton();
+        btnbuscar = new javax.swing.JButton();
+        btnnuevo = new javax.swing.JButton();
+
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tecnologia de Operaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+
+        jLabel1.setText("IdTop:");
+
+        jLabel2.setText("CodCaf:");
+
+        jLabel3.setText("Componente:");
+
+        jLabel4.setText("Marca:");
+
+        jLabel5.setText("Serie:");
+
+        jLabel6.setText("Modelo:");
+
+        jLabel7.setText("Otras:");
+
+        jLabel8.setText("UB-TecOpe:");
+
+        txtidtop.setEditable(false);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtcodcaf)
+                    .addComponent(txtcomponente)
+                    .addComponent(txtmarca)
+                    .addComponent(txtidtop, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(62, 62, 62)
+                                .addComponent(jLabel8))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtubtecop)
+                            .addComponent(txtotras)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtserie, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtmodelo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(202, 202, 202))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel5)
+                    .addComponent(txtidtop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtserie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel6)
+                    .addComponent(txtcodcaf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtmodelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel7)
+                    .addComponent(txtcomponente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtotras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel8)
+                    .addComponent(txtmarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtubtecop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Tecnologia de Operaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+
+        tblslistaoperaciones.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "IdTop", "CodCaf", "Componente", "Marca", "Serie", "Modelo", "Otras", "UB_TecOpe"
+            }
+        ));
+        tblslistaoperaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblslistaoperacionesMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblslistaoperaciones);
+        if (tblslistaoperaciones.getColumnModel().getColumnCount() > 0) {
+            tblslistaoperaciones.getColumnModel().getColumn(0).setMaxWidth(50);
+        }
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        btnagregar.setText("Agregar");
+        btnagregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnagregarActionPerformed(evt);
+            }
+        });
+
+        btnmodificar.setText("Modificar");
+        btnmodificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmodificarActionPerformed(evt);
+            }
+        });
+
+        btneliminar.setText("Eliminar");
+        btneliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneliminarActionPerformed(evt);
+            }
+        });
+
+        btnbuscar.setText("Buscar");
+
+        btnnuevo.setText("Nuevo");
+        btnnuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnnuevoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnagregar)
+                .addGap(37, 37, 37)
+                .addComponent(btnmodificar)
+                .addGap(34, 34, 34)
+                .addComponent(btneliminar)
+                .addGap(32, 32, 32)
+                .addComponent(btnbuscar)
+                .addGap(48, 48, 48)
+                .addComponent(btnnuevo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnagregar)
+                    .addComponent(btnmodificar)
+                    .addComponent(btneliminar)
+                    .addComponent(btnbuscar)
+                    .addComponent(btnnuevo))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
+        // TODO add your handling code here:
+        String codcaf=txtcodcaf.getText();
+        String componente=txtcomponente.getText();
+        String marca=txtmarca.getText();
+        String serie=txtserie.getText();
+        String modelo=txtmodelo.getText();
+        String otras=txtotras.getText();
+        String ubtecop=txtubtecop.getText();
+        
+        op = ad.registrarPeriferico(codcaf,componente,marca,serie,modelo,otras,ubtecop);
+        limpiar();
+        if(op!=0){
+            JOptionPane.showMessageDialog(null,"registrado!");
+            updateComponets();            
+            btnagregar.setEnabled(true);
+            txtcodcaf.requestFocus();
+        }else{
+            JOptionPane.showMessageDialog(null,"no registrado!");
+            txtcodcaf.requestFocus();
+        } 
+    }//GEN-LAST:event_btnagregarActionPerformed
 
+    private void btnmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmodificarActionPerformed
+        // TODO add your handling code here:
+        int fil = tblslistaoperaciones.getSelectedRow();
+        if(fil<0){
+            JOptionPane.showMessageDialog(null, "Seleccionar para MODIFICAR!");
+        }else{
+            int confirmar=JOptionPane.showConfirmDialog(null, "Esta seguro que desea MODIFICAR? "); 
+            if(JOptionPane.OK_OPTION==confirmar) {
+                   int id = Integer.parseInt(txtidtop.getText());
+                   String codcaf=txtcodcaf.getText();
+                   String estacion=txtcomponente.getText();
+                   String marca=txtmarca.getText();
+                   String modelo=txtserie.getText();
+                   String serie=txtmodelo.getText();
+                   String otras=txtotras.getText();
+                   String ubtecop=txtubtecop.getText();
+                    int x = ad.modificarTecoperaciones(id,codcaf,estacion,marca,modelo,serie,otras,ubtecop);
+                    if(x==1){
+                        JOptionPane.showMessageDialog(null, "MODIFICADO!");
+                        updateComponets();
+                        limpiar();
+                        txtcodcaf.requestFocus();
+                    }else{
+                        JOptionPane.showMessageDialog(null, "no se ha MODIFICADO!");  
+                        txtcodcaf.requestFocus();
+                    }                   
+            }        
+        }
+    }//GEN-LAST:event_btnmodificarActionPerformed
+
+    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
+        // TODO add your handling code here:
+        int fila =tblslistaoperaciones.getSelectedRow();
+        if(fila<0){
+            JOptionPane.showMessageDialog(null, "Seleccionar para ELIMINAR");            
+        }else{
+            int confirmar=JOptionPane.showConfirmDialog(null, "Esta seguro que desea ELIMINAR? "); 
+            if(JOptionPane.OK_OPTION==confirmar) {
+                    int celda = (int) tblslistaoperaciones.getValueAt(fila, 0);
+                    int x = ad.eliminarTecoperaciones(celda);
+                    if(x==1){
+                        JOptionPane.showMessageDialog(null, "ELIMINADO!");
+                        updateComponets();
+                        limpiar();
+                        txtcodcaf.requestFocus();
+                    }else{
+                        JOptionPane.showMessageDialog(null, "NO ELIMINADO!");  
+                        txtcodcaf.requestFocus();
+                    }                   
+            } 
+            
+        } 
+    }//GEN-LAST:event_btneliminarActionPerformed
+
+    private void tblslistaoperacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblslistaoperacionesMouseClicked
+        // TODO add your handling code here:
+        if(evt.getButton()==1){
+            int fila = tblslistaoperaciones.getSelectedRow();
+            int celda = (int) tblslistaoperaciones.getValueAt(fila, 0);
+            lista = ad.listarTecoperaciones(celda);
+            for(int i=0;i<lista.size();i++){
+                txtidtop.setText(""+lista.get(i).getIdtop());
+                txtcodcaf.setText(lista.get(i).getCodcaf());
+                txtcomponente.setText(lista.get(i).getComponente());
+                  txtmarca.setText(lista.get(i).getMarca());
+                  txtmodelo.setText(lista.get(i).getModelo());
+                 txtserie.setText(lista.get(i).getSerie());
+                   txtotras.setText(lista.get(i).getOtras());
+                   txtubtecop.setText(lista.get(i).getUbtec());
+                 
+            }
+        } 
+    }//GEN-LAST:event_tblslistaoperacionesMouseClicked
+
+    private void btnnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnuevoActionPerformed
+        // TODO add your handling code here:
+        limpiar();
+    }//GEN-LAST:event_btnnuevoActionPerformed
+void limpiar(){
+    txtidtop.setText(null);
+    txtcodcaf.setText(null);
+    txtmarca.setText(null);
+    txtmodelo.setText(null);
+    txtserie.setText(null);
+    txtotras.setText(null);
+    txtubtecop.setText(null);
+    txtcomponente.setText(null);
+                   
+}
+void listarTecoperaciones(){
+    lista = ad.listarTecoperaciones();
+    model = (DefaultTableModel) tblslistaoperaciones.getModel();
+        Object[] tec = new Object[8];
+        for(int i=0;i<lista.size();i++){
+            tec[0]=lista.get(i).getIdtop();
+            tec[1]=lista.get(i).getCodcaf();
+            tec[2]=lista.get(i).getMarca();
+            tec[3]=lista.get(i).getModelo();
+            tec[4]=lista.get(i).getSerie();
+            tec[5]=lista.get(i).getOtras();
+            tec[6]=lista.get(i).getUbtec();
+            model.addRow(tec);
+        }        
+        tblslistaoperaciones.setModel(model);
+}
+void LimpiarTabla(DefaultTableModel modelo){
+        int a =modelo.getRowCount()-1;
+        for(int i=a;i>=0;i--){  
+            modelo.removeRow(i);
+        }
+}
+void updateComponets(){
+            LimpiarTabla(model);
+            listarTecoperaciones();
+            modelolista.clear();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnagregar;
+    private javax.swing.JButton btnbuscar;
+    private javax.swing.JButton btneliminar;
+    private javax.swing.JButton btnmodificar;
+    private javax.swing.JButton btnnuevo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblslistaoperaciones;
+    private javax.swing.JTextField txtcodcaf;
+    private javax.swing.JTextField txtcomponente;
+    private javax.swing.JTextField txtidtop;
+    private javax.swing.JTextField txtmarca;
+    private javax.swing.JTextField txtmodelo;
+    private javax.swing.JTextField txtotras;
+    private javax.swing.JTextField txtserie;
+    private javax.swing.JTextField txtubtecop;
     // End of variables declaration//GEN-END:variables
 }

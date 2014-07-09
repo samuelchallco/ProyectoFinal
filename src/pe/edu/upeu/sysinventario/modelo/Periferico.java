@@ -171,21 +171,21 @@ public class Periferico {
     }
     public static Periferico loadPeriferico(ResultSet rs) throws SQLException{
 		Periferico periferico = new Periferico();
-                periferico.setIdper(rs.getInt("idper"));
-		periferico.setUbcodcaf(rs.getString("ubcodcaf"));
-		periferico.setUbestacion(rs.getString("ubestacion"));
-                periferico.setMonmarca(rs.getString("monmarca"));
-                periferico.setMonmodelo(rs.getString("monmodelo"));
-                periferico.setMontipo(rs.getString("montipo"));
-                periferico.setMonserie(rs.getString("monserie"));
-                periferico.setTecmarca(rs.getString("tecmarca"));
-                periferico.setTecmodelo(rs.getString("tecmodelo"));
-                periferico.setTecserie(rs.getString("tecserie"));
-                periferico.setTectipo(rs.getString("tectipo"));
-                periferico.setMoumarca(rs.getString("moumarca"));
-                periferico.setMoumodelo(rs.getString("moumodelo"));
-                periferico.setMouserie(rs.getString("mouserie"));
-                periferico.setMoutipo(rs.getString("moutipo"));
+                periferico.setIdper(rs.getInt("IdPer"));
+		periferico.setUbcodcaf(rs.getString("UB_CodCAF"));
+		periferico.setUbestacion(rs.getString("UB_Estacion"));
+                periferico.setMonmarca(rs.getString("Mon_Marca"));
+                periferico.setMonmodelo(rs.getString("Mon_Modelo"));
+                periferico.setMontipo(rs.getString("Mon_Tipo"));
+                periferico.setMonserie(rs.getString("Mon_Serie"));
+                periferico.setTecmarca(rs.getString("Tec_Marca"));
+                periferico.setTecmodelo(rs.getString("Tec_Modelo"));
+                periferico.setTecserie(rs.getString("Tec_Serie"));
+                periferico.setTectipo(rs.getString("Tec_Tipo"));
+                periferico.setMoumarca(rs.getString("Mou_Marca"));
+                periferico.setMoumodelo(rs.getString("Mou_Modelo"));
+                periferico.setMouserie(rs.getString("Mou_Serie"));
+                periferico.setMoutipo(rs.getString("Mou_Tipo"));
                 return periferico;
 	}
     

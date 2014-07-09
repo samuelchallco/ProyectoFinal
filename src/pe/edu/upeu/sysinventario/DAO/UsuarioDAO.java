@@ -137,4 +137,21 @@ public class UsuarioDAO {
         }   
     return lista;
     }
+    public int BuscarUsuario(String id){
+    sql="SELECT * FROM usuario WHERE idUsuario='"+id+"'";
+        try {
+            cx = Conexion.GetConexion();
+            st = cx.createStatement();
+            rs = st.executeQuery(sql);
+            //cx.close();
+            if(rs.next()){
+                res=1;
+            }else{
+                res=2;
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error: "+ex);
+        }
+        return res;    
+    }
 }

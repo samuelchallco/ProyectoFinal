@@ -28,6 +28,7 @@ public final class UsuarioForm extends javax.swing.JInternalFrame {
     DefaultTableModel model;
     DefaultComboBoxModel modelocombo = new DefaultComboBoxModel();
     DefaultListModel modelolista =  new DefaultListModel();
+    
     /**
      * Creates new form UsuarioForm
      */
@@ -59,7 +60,7 @@ public final class UsuarioForm extends javax.swing.JInternalFrame {
         btnagregar = new javax.swing.JButton();
         btnmodificar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
-        btnbuscar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -206,21 +207,26 @@ public final class UsuarioForm extends javax.swing.JInternalFrame {
             }
         });
 
-        btnbuscar.setText("Buscar");
+        jButton1.setText("Nuevo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(30, 30, 30)
                 .addComponent(btnagregar)
-                .addGap(43, 43, 43)
+                .addGap(18, 18, 18)
                 .addComponent(btnmodificar)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addComponent(btneliminar)
-                .addGap(39, 39, 39)
-                .addComponent(btnbuscar)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -231,8 +237,8 @@ public final class UsuarioForm extends javax.swing.JInternalFrame {
                     .addComponent(btnagregar)
                     .addComponent(btnmodificar)
                     .addComponent(btneliminar)
-                    .addComponent(btnbuscar))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addComponent(jButton1))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -354,22 +360,6 @@ public UsuarioForm() {
 
     private void txtusuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtusuarioKeyPressed
         // TODO add your handling code here:
-        int key = evt.getKeyCode();
-        if (key == KeyEvent.VK_ENTER) {
-            //JOptionPane.showMessageDialog(null,"caja usuario");
-            if(!txtusuario.getText().equals("")){
-                op = ad.verificarUsuario(txtusuario.getText());
-                if(op==1){
-                    JOptionPane.showMessageDialog(null,"Usuario existe!");
-                    txtusuario.setText(null);
-                    txtusuario.requestFocus();
-                }else{
-                    JOptionPane.showMessageDialog(null,"Usuario no existe!");
-                    txtclave.setEditable(true);
-                    txtclave.requestFocus();
-                }
-            }
-        }
     }//GEN-LAST:event_txtusuarioKeyPressed
 
     private void jtblistausuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtblistausuarioMouseClicked
@@ -385,6 +375,11 @@ public UsuarioForm() {
             }
         } 
     }//GEN-LAST:event_jtblistausuarioMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        limpiar();
+    }//GEN-LAST:event_jButton1ActionPerformed
 void updateComponets(){
             LimpiarTabla(model);
             listarUser();
@@ -437,12 +432,13 @@ void cargarList(){
         }
     
  }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnagregar;
-    private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JComboBox cboUsuarios;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
