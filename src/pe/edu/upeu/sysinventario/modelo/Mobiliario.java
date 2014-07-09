@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class Mobiliario {
     private int idmob;
-    private int codcaf;
+    private String codcaf;
     private String componente;
     private String marca;
     private String modelo;
@@ -25,7 +25,7 @@ public class Mobiliario {
     public Mobiliario() {
     }
 
-    public Mobiliario(int codcaf, String componente, String marca, String modelo, String otras, String ubmob) {
+    public Mobiliario(String codcaf, String componente, String marca, String modelo, String otras, String ubmob) {
         this.codcaf = codcaf;
         this.componente = componente;
         this.marca = marca;
@@ -42,11 +42,11 @@ public class Mobiliario {
         this.idmob = idmob;
     }
 
-    public int getCodcaf() {
+    public String getCodcaf() {
         return codcaf;
     }
 
-    public void setCodcaf(int codcaf) {
+    public void setCodcaf(String codcaf) {
         this.codcaf = codcaf;
     }
 
@@ -91,14 +91,13 @@ public class Mobiliario {
     }
     public static Mobiliario loadMobiliario(ResultSet rs) throws SQLException{
 		Mobiliario mobiliario = new Mobiliario();
-                mobiliario.setIdmob(rs.getInt("idmob"));
-                mobiliario.setCodcaf(rs.getInt("codcaf"));
-		mobiliario.setComponente(rs.getString("componente"));
-		mobiliario.setMarca(rs.getString("marca"));
-                mobiliario.setModelo(rs.getString("modelo"));
-                mobiliario.setOtras(rs.getString("otras"));
-                mobiliario.setUbmob(rs.getString("ubmob"));
+                mobiliario.setIdmob(rs.getInt("IdMob"));
+                mobiliario.setCodcaf(rs.getString("Cod_CAF"));
+		mobiliario.setComponente(rs.getString("Componente"));
+		mobiliario.setMarca(rs.getString("Marca"));
+                mobiliario.setModelo(rs.getString("Modelo"));
+                mobiliario.setOtras(rs.getString("Otras"));
+                mobiliario.setUbmob(rs.getString("UB_Mob"));
 		return mobiliario;
 	}
-    
 }

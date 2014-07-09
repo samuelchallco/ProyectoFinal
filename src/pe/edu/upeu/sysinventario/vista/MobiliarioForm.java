@@ -6,16 +6,31 @@
 
 package pe.edu.upeu.sysinventario.vista;
 
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import pe.edu.upeu.sysinventario.DAO.MobiliarioDAO;
+import pe.edu.upeu.sysinventario.modelo.Mobiliario;
+
 /**
  *
  * @author SAMUEL CHALLCO
  */
 public final class MobiliarioForm extends javax.swing.JInternalFrame {
-    
+    MobiliarioDAO ad = new MobiliarioDAO();
+    int op;
+    ArrayList<Mobiliario> lista = new ArrayList();
+    DefaultListModel modelolista = new DefaultListModel();
+    DefaultTableModel model;
     /**
      * Creates new form MobiliarioForm
      */
-    
+    public MobiliarioForm(){
+        initComponents();
+        setLocation(700, 200);
+        listarMobiliario();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,20 +60,17 @@ public final class MobiliarioForm extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblmobiliario = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        listamo = new javax.swing.JList();
-        cbolista = new javax.swing.JComboBox();
         btnagregar = new javax.swing.JButton();
         btnmodificar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
         btnbuscar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos de Mobiliario"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos de Mobiliario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
         jLabel1.setText("ID_Mob:");
 
@@ -73,6 +85,8 @@ public final class MobiliarioForm extends javax.swing.JInternalFrame {
         jLabel6.setText("Otros:");
 
         jLabel7.setText("UB_Mob:");
+
+        txtidmob.setEditable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -148,7 +162,7 @@ public final class MobiliarioForm extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Listado de mobiliario"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de mobiliario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
         tblmobiliario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -157,7 +171,15 @@ public final class MobiliarioForm extends javax.swing.JInternalFrame {
             new String [] {
                 "IDMob", "CODCAF", "Componente", "Marca", "Modelo", "Otros", "UBMob"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblmobiliario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblmobiliarioMouseClicked(evt);
@@ -197,30 +219,6 @@ public final class MobiliarioForm extends javax.swing.JInternalFrame {
             .addGap(0, 420, Short.MAX_VALUE)
         );
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de ID"));
-
-        jScrollPane2.setViewportView(listamo);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(cbolista, 0, 158, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addComponent(cbolista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
         btnagregar.setText("Agregar");
         btnagregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -244,17 +242,21 @@ public final class MobiliarioForm extends javax.swing.JInternalFrame {
 
         btnbuscar.setText("Buscar");
 
+        jButton1.setText("Nuevo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -268,6 +270,8 @@ public final class MobiliarioForm extends javax.swing.JInternalFrame {
                 .addComponent(btneliminar)
                 .addGap(36, 36, 36)
                 .addComponent(btnbuscar)
+                .addGap(40, 40, 40)
+                .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -276,9 +280,7 @@ public final class MobiliarioForm extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -287,8 +289,9 @@ public final class MobiliarioForm extends javax.swing.JInternalFrame {
                     .addComponent(btnagregar, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
                     .addComponent(btnmodificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btneliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnbuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                    .addComponent(btnbuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
@@ -296,21 +299,141 @@ public final class MobiliarioForm extends javax.swing.JInternalFrame {
 
     private void tblmobiliarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblmobiliarioMouseClicked
         // TODO add your handling code here:
+        if(evt.getButton()==1){
+            int fila = tblmobiliario.getSelectedRow();
+            int celda = (int) tblmobiliario.getValueAt(fila, 0);
+            lista = ad.listarMobiliario(celda);
+            for (int i=0;i<lista.size();i++){
+            txtidmob.setText(""+lista.get(i).getIdmob());
+            txtcodcaf.setText(lista.get(i).getCodcaf());
+            txtcom.setText(lista.get(i).getComponente());
+            txtmarca.setText(lista.get(i).getMarca());
+            txtmodelo.setText(lista.get(i).getModelo());
+            txtotras.setText(lista.get(i).getOtras());
+            txtubmob.setText(lista.get(i).getUbmob());
+            }
+        }
     }//GEN-LAST:event_tblmobiliarioMouseClicked
 
     private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
         // TODO add your handling code here:
+        String codcaf=txtcodcaf.getText();
+     String componente=txtcom.getText();
+     String marca=txtmarca.getText();
+     String modelo=txtmodelo.getText();
+     String otras=txtotras.getText();
+     String ubmob=txtubmob.getText();
+     
+     op = ad.registrarMobiliario(codcaf, componente, marca, modelo, otras, ubmob);
+     limpiar();
+      if(op!=0){
+            JOptionPane.showMessageDialog(null,"Mobiliario registrado!");
+            updateComponets();            
+            btnagregar.setEnabled(true);
+            txtcodcaf.requestFocus();
+        }else{
+            JOptionPane.showMessageDialog(null,"Mobiliario no registrado!");
+            txtcodcaf.requestFocus();
+        } 
     }//GEN-LAST:event_btnagregarActionPerformed
 
     private void btnmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmodificarActionPerformed
-        // TODO add your handling code here:    
+        // TODO add your handling code here:   
+        int fil = tblmobiliario.getSelectedRow();
+        if(fil<0){
+            JOptionPane.showMessageDialog(null, "Seleccionar El Mobiliario a MODIFICAR!");
+        }else{
+            int confirmar=JOptionPane.showConfirmDialog(null, "Esta seguro que desea MODIFICAR el Usuario? "); 
+            if(JOptionPane.OK_OPTION==confirmar) {
+                   int id = Integer.parseInt(txtidmob.getText());
+                    String codcaf=txtcodcaf.getText();
+                    String componente=txtcom.getText();
+                    String marca=txtmarca.getText();
+                    String modelo=txtmodelo.getText();
+                    String otras=txtotras.getText();
+                    String ubmob=txtubmob.getText();
+                    int x = ad.modificarMobiliario(id, codcaf, componente, marca, modelo, otras, ubmob);
+                    if(x==1){
+                        JOptionPane.showMessageDialog(null, "Mobiliario MODIFICADO!");
+                        updateComponets();
+                        limpiar();
+                        txtcodcaf.requestFocus();
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Mobiliario no se ha MODIFICADO!");  
+                        txtcodcaf.requestFocus();
+                    }                   
+            }        
+        }
     }//GEN-LAST:event_btnmodificarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
-        // TODO add your handling code here:    
+        // TODO add your handling code here: 
+        int fila = tblmobiliario.getSelectedRow();
+        if(fila<0){
+            JOptionPane.showMessageDialog(null, "Seleccionar El Mobiliario a ELIMINAR");            
+        }else{
+            int confirmar=JOptionPane.showConfirmDialog(null, "Esta seguro que desea ELIMINAR el Mobiliario? "); 
+            if(JOptionPane.OK_OPTION==confirmar) {
+                    int celda = (int) tblmobiliario.getValueAt(fila, 0);
+                    int x = ad.eliminarMobiliario(celda);
+                    if(x==1){
+                        JOptionPane.showMessageDialog(null, "Mobiliario ELIMINADO!");
+                        updateComponets();
+                        limpiar();
+                        txtcodcaf.requestFocus();
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Mobiliario no ELIMINADO!");     
+                        txtcodcaf.requestFocus();
+                    }                   
+            } 
+            
+        }  
     }//GEN-LAST:event_btneliminarActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        limpiar();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
+void limpiar(){
+     txtidmob.setText(null);
+            txtcodcaf.setText(null);
+            txtcom.setText(null);
+            txtmarca.setText(null);
+            txtmodelo.setText(null);
+            txtotras.setText(null);
+            txtubmob.setText(null);
+}
+void listarMobiliario(){
+    lista = ad.listarMobiliario();
+    model = (DefaultTableModel) tblmobiliario.getModel();
+    Object[] mob = new Object[9];
+    for(int i=0;i<lista.size();i++){
+    mob[0]=lista.get(i).getIdmob();
+    mob[1]=lista.get(i).getCodcaf();
+    mob[2]=lista.get(i).getComponente();
+    mob[3]=lista.get(i).getMarca();
+    mob[4]=lista.get(i).getModelo();
+    mob[5]=lista.get(i).getOtras();
+    mob[6]=lista.get(i).getUbmob();
+    model.addRow(mob);
+    }
+    tblmobiliario.setModel(model);
+   
+    
+}
+
+void LimpiarTabla(DefaultTableModel modelo){
+        int a =modelo.getRowCount()-1;
+        for(int i=a;i>=0;i--){  
+            modelo.removeRow(i);
+        }
+}
+void updateComponets(){
+    LimpiarTabla(model);
+    listarMobiliario();
+    modelolista.clear();
+}
 
 
 
@@ -320,7 +443,7 @@ public final class MobiliarioForm extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnmodificar;
-    private javax.swing.JComboBox cbolista;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -331,10 +454,7 @@ public final class MobiliarioForm extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JList listamo;
     private javax.swing.JTable tblmobiliario;
     private javax.swing.JTextField txtcodcaf;
     private javax.swing.JTextField txtcom;
